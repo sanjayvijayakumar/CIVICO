@@ -33,6 +33,60 @@ unrestricted age/depth choices, optional faculties, evidence validation,
 portfolio/journal separation, and static-server security. There is no separate
 linter or compilation pipeline.
 
+### Deploy to Cloudflare Pages
+
+The pilot can be hosted as static files on Cloudflare Pages; the Node.js server
+is for local use only. No build, dependencies, API keys, or runtime environment
+variables are required for the hosted application.
+
+An account owner must authorize Cloudflare's GitHub integration and create the
+Pages project. Repository configuration alone does **not** publish a site.
+
+1. Sign in to the Cloudflare dashboard and create a **Pages** project using
+   **Connect to Git** (under **Workers & Pages**).
+2. Authorize access to `sanjayvijayakumar/CIVICO` and select that repository.
+3. Choose the production branch that contains the Adhyayana files and these
+   deployment changes. Merge them into the desired production branch first if
+   necessary.
+4. Configure:
+
+   | Setting | Value |
+   | --- | --- |
+   | Framework preset | None |
+   | Root directory | Repository root (leave default) |
+   | Build command | Empty |
+   | Build output directory | `public` |
+
+5. Save and deploy. Cloudflare assigns an HTTPS address such as
+   `https://<your-project-name>.pages.dev`; use the actual URL shown in the
+   deployment dashboard. This example is not a deployed site.
+
+Only the `public` directory should be published, never the repository root.
+`public/_headers` applies the local server's security and privacy headers to
+Pages responses. `public/404.html` disables Pages' implicit single-page-app
+fallback so unknown URLs return a not-found page rather than the learning app.
+Do not enable Web Analytics, external scripts, or other automatic script
+injection: this pilot intentionally has no analytics and restricts scripts and
+network connections through its Content Security Policy.
+
+After deployment:
+
+- Open the assigned HTTPS URL on a phone and a desktop. Check that styles,
+  perspective selection, learning stages, and portfolio downloads work.
+- Inspect response headers for `/`, `/app.js`, and an unknown URL. Confirm
+  Content-Security-Policy, Permissions-Policy, `X-Content-Type-Options: nosniff`,
+  `Referrer-Policy: no-referrer`, and `Cache-Control: no-store`.
+- Confirm `/server.js`, `/package.json`, and unknown paths return HTTP 404.
+- Write a disposable journal entry and download a portfolio; verify that the
+  journal is absent from the download and that refreshing clears session work.
+- Review Cloudflare's current plan limits, hosting privacy policies, and request
+  logging before inviting learners, especially children. The app's session-only
+  privacy model does not prevent hosting-provider access logs.
+
+Git-connected Pages projects redeploy when the configured branch changes.
+No public deployment URL is recorded here because publishing requires account
+authorization and a successful deployment in Cloudflare.
+
 ### Explore the pilot
 
 1. Choose an age-appropriate presentation, reading style, depth, prior experience,
