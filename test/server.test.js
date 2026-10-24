@@ -27,7 +27,7 @@ test('static server exposes only application assets with privacy and security he
     const html = await response.text();
     assert.match(html, /Sound, Music, and Meaning/);
     assert.match(html, /type="module" src="\/app.js"/);
-    assert.doesNotMatch(html, /<script[^>]*>[^<\s]/);
+    assert.doesNotMatch(html, /<script[^>]*>[^<\s]/i);
   });
 
   await t.test('all module and style assets are served with correct MIME types', async () => {
