@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adhyayana: explore connected knowledge through inquiry, practice, and optional reflection.">
+  <title>Adhyayana · Learn in connection</title>
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to learning</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Adhyayana home"><span class="brand-mark" aria-hidden="true">a</span> adhyayana</a>
+    <span class="eyebrow">AN INTEGRAL LEARNING PILOT</span>
+    <a href="#privacy">Privacy &amp; care</a>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="welcome">
+      <div>
+        <p class="eyebrow">MANY PERSPECTIVES. YOUR OWN PATH.</p>
+        <h1 id="welcome">Learn in connection.<br><em>Grow in awareness.</em></h1>
+        <p>Explore knowledge through inquiry, experience, and reflection. Intelligence, awareness, and self-awareness are aspirations—not scores or a fixed ladder.</p>
+        <a class="button" href="#inquiry">Explore the pilot <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-map" aria-label="Six interconnected subjects">
+        <span class="map-center">A question<br>connects us</span>
+        <span>Science</span><span>Arts</span><span>Philosophy</span>
+        <span>History &amp; Sociology</span><span>Psychology</span><span>Linguistics</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="path-heading">
+      <div class="section-heading"><div><p class="eyebrow">01 / YOUR STARTING POINT</p><h2 id="path-heading">A path that fits you</h2></div><span class="pill">No account needed</span></div>
+      <p>Age guides the presentation, never your potential. Choose any depth, change your route, or skip an activity.</p>
+      <div class="preferences">
+        <label>Presentation for<select id="age"><option value="early">Early childhood · with a caregiver</option><option value="child" selected>Children</option><option value="teen">Adolescents</option><option value="adult">Adults</option></select></label>
+        <label>Reading style<select id="reading"><option value="simple">Simple &amp; concrete</option><option value="standard">Detailed &amp; exploratory</option></select></label>
+        <label>Depth<select id="depth"><option value="explore">Explore</option><option value="practice">Practice</option><option value="apply">Apply</option><option value="research">Research</option></select></label>
+        <label>Prior experience<select id="prior"><option value="new">New to this inquiry</option><option value="familiar">Already familiar</option></select></label>
+        <label>Learning intention<select id="pathway"><option value="informal">Personal exploration</option><option value="credential">Prepare evidence for accreditation</option></select></label>
+      </div>
+      <p id="age-guidance" class="callout"></p>
+      <p id="pathway-guidance"></p>
+      <details>
+        <summary>Accessibility &amp; comfort</summary>
+        <div class="access-options">
+          <label><input type="checkbox" id="large-text"> Larger text</label>
+          <label><input type="checkbox" id="reduce-motion"> Reduce motion</label>
+        </div>
+        <p>All activities include alternatives. No hearing, sight, speech, movement, or breathing exercise is required. Written, signed, tactile, imagined, and companion-supported responses are equally valid.</p>
+      </details>
+    </section>
+
+    <section id="inquiry" class="panel inquiry" aria-labelledby="inquiry-heading">
+      <p class="eyebrow">02 / A SHARED INQUIRY</p>
+      <h2 id="inquiry-heading">Sound, Music, and Meaning</h2>
+      <p id="inquiry-intro"></p>
+      <label class="question-label" for="question">Your guiding question</label>
+      <input id="question" type="text" maxlength="240" value="How can a rhythm carry meaning?" autocomplete="off" aria-describedby="question-help">
+      <p id="question-help" class="muted">Make it your own. Keep names and other personal details out of this shared-device session.</p>
+      <fieldset><legend>Choose your perspectives</legend><div id="perspective-options" class="choice-grid"></div></fieldset>
+      <p id="perspective-status" class="muted" role="status"></p>
+      <div class="section-heading"><h3>Your knowledge map</h3><span class="muted">Follow a connection, not a checklist</span></div>
+      <p>These are invitations, not locked prerequisites. Select a perspective to see its starting knowledge, connections, and possible evidence.</p>
+      <div id="knowledge-map" class="knowledge-grid"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="cycle-heading">
+      <p class="eyebrow">03 / LEARN THROUGH EXPERIENCE</p>
+      <h2 id="cycle-heading">A cycle, not a race</h2>
+      <p id="prior-guidance"></p>
+      <nav id="stage-nav" class="stage-nav" aria-label="Learning cycle"></nav>
+      <article id="stage-content" class="stage-content" aria-live="polite"></article>
+      <div class="stage-actions">
+        <label><input type="checkbox" id="stage-complete"> Mark this step explored (optional)</label>
+        <button id="next-stage" type="button">Next invitation →</button>
+      </div>
+      <p id="cycle-status" class="muted" role="status"></p>
+      <fieldset><legend>Faculties you would like to engage</legend><p>Select any, or none. Faculty choices are not measures of ability or consciousness. Prana activities are optional and off by default.</p><div id="faculty-options" class="choice-grid"></div></fieldset>
+      <div id="faculty-activities" class="faculty-grid"></div>
+    </section>
+
+    <section class="records-grid" aria-label="Separate learning and reflection records">
+      <section class="panel" aria-labelledby="portfolio-heading">
+        <p class="eyebrow">04 / KNOWLEDGE &amp; CAPABILITY</p>
+        <h2 id="portfolio-heading">Learning portfolio</h2>
+        <p>Save a project, explanation, or demonstration as text. Review evidence against visible criteria. Self-review is not verified assessment or an accredited credential.</p>
+        <p id="depth-task" class="callout"></p>
+        <form id="evidence-form" autocomplete="off">
+          <label>Artifact title<input id="evidence-title" required maxlength="120" placeholder="A rhythm told in dots"></label>
+          <label>Evidence or explanation<textarea id="evidence-text" required maxlength="5000" rows="5" placeholder="Describe what you made, what you found, and any sources or limitations."></textarea></label>
+          <fieldset><legend>Transparent self-review</legend><div id="rubric"></div></fieldset>
+          <button type="submit">Add learning evidence</button>
+        </form>
+        <p id="portfolio-status" role="status"></p>
+        <div id="portfolio-entries"></div>
+        <button id="export-portfolio" class="secondary" type="button" disabled>Download portfolio (JSON)</button>
+        <p class="muted">The download contains learning evidence only, never the private journal. Files you download remain on your device; review them before sharing.</p>
+      </section>
+      <section class="panel journal" aria-labelledby="journal-heading">
+        <p class="eyebrow">05 / OPTIONAL &amp; UNASSESSED</p>
+        <h2 id="journal-heading">A moment to reflect</h2>
+        <span class="pill">Separate from your portfolio</span>
+        <p>You can reflect silently, write here, or skip. There is no right answer and no consciousness score.</p>
+        <ul id="reflection-prompts"></ul>
+        <label for="journal">Private session journal (optional)</label>
+        <textarea id="journal" rows="7" maxlength="5000" autocomplete="off" placeholder="Only if you want to write…" aria-describedby="journal-privacy"></textarea>
+        <p id="journal-privacy">Held only in this page’s memory, not sent to a server, saved in browser storage, or included in portfolio downloads. Anyone viewing this open page can see it. Refreshing or closing loses it.</p>
+        <button id="clear-journal" class="secondary" type="button">Clear journal</button>
+        <p id="journal-status" role="status"></p>
+        <details>
+          <summary>Help evaluate the pilot (optional)</summary>
+          <p>Use these prompts locally or discuss them without personal disclosures: Could you explain a concept? Apply it in another subject? Access the activity? Choose your own route? Reflect in a way that felt comfortable?</p>
+          <label for="feedback">Session feedback—not included in downloads</label>
+          <textarea id="feedback" rows="3" maxlength="2000" autocomplete="off"></textarea>
+          <p>No feedback is submitted or collected. Cross-disciplinary transfer is a hypothesis to evaluate, not proof of brain-pattern changes.</p>
+        </details>
+      </section>
+    </section>
+
+    <section id="privacy" class="panel privacy" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Care is part of the curriculum.</h2>
+      <p>This pilot has no accounts, analytics, advertising, external media, microphone access, or cloud saving. It asks for no exact age or identity. All entries disappear on refresh; download portfolio evidence if you want to keep it. Your hosting provider may still keep ordinary web request logs.</p>
+      <p>Do not enter identifying or sensitive information. Caregivers should support young learners on shared devices. Contemplative activities are optional, non-coercive, and not health advice. Disability, participation, or personal disclosure never determines a learner’s worth.</p>
+      <p>Formal accreditation requires an appropriate institution, agreed standards, and independent assessment. This pilot does not issue credentials. Personal reflection is never evidence for spiritual attainment.</p>
+      <button id="reset-session" class="secondary" type="button">Clear all session work</button>
+      <p id="reset-status" role="status"></p>
+    </section>
+  </main>
+  <footer><span class="brand">adhyayana</span><p>Knowledge in connection. Learning with care.</p><span class="muted">Pilot 01 · Explore freely</span></footer>
+  <noscript><p class="panel">Enable JavaScript to use the interactive learning pilot. No data is sent to a server.</p></noscript>
+</body>
+</html>

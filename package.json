@@ -1,0 +1,16 @@
+{
+  "name": "adhyayana",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An integral learning pilot: Sound, Music, and Meaning.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/curriculum.js && node --check public/model.js && node --check public/app.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
